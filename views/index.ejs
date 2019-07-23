@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <style>
+        .forecast {
+            box-shadow: 3px 3px 3px gray;
+            background: lightcyan;
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>test</h3>
+    <ul>
+        <% weather.forEach(item => { %>
+            <div class="forecast">
+                <h5>Day: <%= item[0] %></h5>
+                <p>High: <%= item[1] %></p>
+                <p>Low: <%= item[2] %></p>
+                <p>Precip: <%= item[3] %></p>
+            </div>
+        <% }); %>
+        
+    </ul>
+</body>
+</html>
