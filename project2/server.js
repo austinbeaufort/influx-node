@@ -61,41 +61,41 @@
 
 // USING APP.ROUTE()
 
-// const express = require('express');
-// const app = express();
-// const bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
 
-// app.use(bodyParser.urlencoded({ extended: false}));
-// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
 
-// books = [
-//     {
-//         title: "hunger games",
-//         author: "suzanne collins",
-//     },
-//     {
-//         title: "The Raven",
-//         author: 'edgar allen poe',
-//     },
-//     {
-//         title: "Jane Eyre",
-//         author: "Charolette Bronte",
-//     },
-// ];
-
-
-// app.get('/', (req, res) => {
-//     res.send('welcome');
-// })
+books = [
+    {
+        title: "hunger games",
+        author: "suzanne collins",
+    },
+    {
+        title: "The Raven",
+        author: 'edgar allen poe',
+    },
+    {
+        title: "Jane Eyre",
+        author: "Charolette Bronte",
+    },
+];
 
 
-// app.route('/books')
-//     .get((req, res) => {
-//         res.send(JSON.stringify(books));
-//     })
-//     .post((req, res) => {
-//         books.push(req.body);
-//         res.send(JSON.stringify(books));
-//     })
+app.get('/', (req, res) => {
+    res.send('welcome');
+})
 
-// app.listen(3000, () => console.log('listening on 3000...'));
+
+app.route('/books')
+    .get((req, res) => {
+        res.send(JSON.stringify(books));
+    })
+    .post((req, res) => {
+        books.push(req.body);
+        res.send(JSON.stringify(books));
+    })
+
+app.listen(3000, () => console.log('listening on 3000...'));
